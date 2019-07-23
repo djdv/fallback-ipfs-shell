@@ -42,7 +42,7 @@ func NewApiShell() (Shell, error) {
 		return nil, err
 	}
 
-	return apiShell, nil
+	return &shellShim{apiShell}, nil
 }
 
 func NewEmbeddedShell() (Shell, error) {
